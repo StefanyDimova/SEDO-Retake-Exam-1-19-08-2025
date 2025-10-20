@@ -11,8 +11,28 @@ body {
   text-align: center
 }
 
-/* Commit 1 – keep originals, add btn style */
+/* Commit 1 – resize color picker */
 #color-input {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: none;
+}
+
+/* Commit 2 – button active pop */
+#apply-btn {
+  padding: .5em 1em;
+  margin-left: .5em;
+  cursor: pointer;
+}
+
+#apply-btn:active {
+  transform: scale(.98)
+}
+
+/* Commit 3 – input radius */
+#color-input {
+  border-radius: 4px
   padding: .5em;
   width: 200px
 }
@@ -38,11 +58,11 @@ body {
   height: 150px;
   background: #ddd;
   border: 1px solid #aaa;
-  transition: border-color .3s
+  transition: border-color .3s;
 }
 
 .rand-hint {
   margin-top: .6em;
   color: #666;
-  font-size: .9em
+  font-size: .9em;
 }
