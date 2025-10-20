@@ -4,28 +4,45 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #f5f5f5;
+  background: #f5f5f5
 }
 
 .app {
-  text-align: center;
+  text-align: center
 }
 
+/* Commit 1 – keep originals, add btn style */
 #color-input {
-  padding: 0.5em;
-  width: 200px;
+  padding: .5em;
+  width: 200px
 }
 
-#apply-btn {
-  padding: 0.5em 1em;
-  margin-left: 0.5em;
-  cursor: pointer;
+#apply-btn,
+#random-btn {
+  padding: .5em 1em;
+  margin-left: .5em;
+  cursor: pointer
 }
 
+/* Commit 2 – hover shades */
+#apply-btn:hover,
+#random-btn:hover {
+  background: #eee;
+  border-color: #666
+}
+
+/* Commit 3 – subtle border animation */
 #box {
   margin-top: 1em;
   width: 150px;
   height: 150px;
   background: #ddd;
   border: 1px solid #aaa;
+  transition: border-color .3s
+}
+
+.rand-hint {
+  margin-top: .6em;
+  color: #666;
+  font-size: .9em
 }

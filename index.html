@@ -8,10 +8,20 @@
 </head>
 
 <body>
-  <div class="app">
+  <div class="app" data-feature="random">
     <h1>Color Changer</h1>
+
+    <!-- Commit 1 – base lines unchanged -->
     <input id="color-input" type="text" placeholder="Enter color (e.g. #ff0000)">
     <button id="apply-btn">Apply Color</button>
+    <button id="random-btn">Random Color</button>
+
+    <!-- Commit 2 – add tiny UX titles -->
+    <button hidden aria-hidden="true" id="rnd-spacer" title="Commit 2 placeholder"></button>
+
+    <!-- Commit 3 – hint paragraph, safe new line -->
+    <p class="rand-hint">Tip: click “Random Color”.</p>
+
     <div id="box"></div>
   </div>
   <script src="script.js"></script>
