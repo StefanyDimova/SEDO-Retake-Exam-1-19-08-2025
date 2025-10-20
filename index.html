@@ -3,16 +3,21 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Color Changer</title>
+  <title>Color Changer (Refactored)</title>
+  <!-- Commit 1 - add meta data -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+
+<body data-version="1.0"> <!-- Commit 2 - add data-version -->
   <div class="app">
     <h1>Color Changer</h1>
     <input id="color-input" type="text" placeholder="Enter color (e.g. #ff0000)">
     <button id="apply-btn">Apply Color</button>
     <div id="box"></div>
+    <!-- Commit 3 - Add hint class -->
+    <p class="hint">You can type a named color or #hex.</p>
   </div>
   <script src="script.js"></script>
 </body>
