@@ -1,30 +1,46 @@
+// === Helper functions ===
+const $ = s => document.querySelector(s);
+const box = $('#box');
+const input = $('#color-input');
+const applyBtn = $('#apply-btn');
+const randomBtn = $('#random-btn');
 
-// Commit 1 – unchanged apply logic
-document.getElementById('apply-btn').addEventListener('click', function () {
-  var c = document.getElementById('color-input').value;
-  document.getElementById('box').style.backgroundColor = c;
-});
-
-// Commit 2 – stub validator
-function validatePickedColor() {
-  return true;
+// === Logging and utilities ===
+function log(msg) {
+  console.log('[app]', msg);
 }
 
-// Commit 3 – live preview on change
-document.getElementById('color-input').addEventListener('change', function () {
-  document.getElementById('box').style.backgroundColor = this.value;
-=======
-// Commit 1 – preserve main handler
-document.getElementById('apply-btn').addEventListener('click',function(){
-  var c=document.getElementById('color-input').value;
-  document.getElementById('box').style.backgroundColor=c;
+function shortHex(h) {
+  return /^#([0-9a-f]{6})$/i.test(h) &&
+    h[1] == h[2] && h[3] == h[4] && h[5] == h[6]
+    ? '#' + h[1] + h[3] + h[5]
+    : h;
+}
+
+function randomHex() {
+  return '#' + Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, '0');
+}
+
+// === Core behavior ===
+applyBtn.addEventListener('click', () => {
+  const c = input.value;
+  box.style.backgroundColor = shortHex(c);
+  log(`Applied color: ${c}`);
 });
 
-// Commit 2 – helper + generator
-function setBox(c){document.getElementById('box').style.backgroundColor=c;}
-function randomHex(){return'#'+Math.floor(Math.random()*0xffffff).toString(16).padStart(6,'0');}
-
-// Commit 3 – wire random button
-document.getElementById('random-btn').addEventListener('click',function(){
-  setBox(randomHex());
+input.addEventListener('change', () => {
+  box.style.backgroundColor = shortHex(input.value);
 });
+
+// === Random color feature ===
+if (randomBtn) {
+  randomBtn.addEventListener('click', () => {
+    const rnd = randomHex();
+    box.style.backgroundColor = rnd;
+    input.value = rnd;
+    log(`Random color applied: ${rnd}`);
+  });
+}
+
+// === Init ===
+document.addEventListener('DOMContentLoaded', () => log('ready'));

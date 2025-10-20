@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Color Picker & Changer</title>
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="app" data-feature="random">
@@ -11,7 +9,6 @@
 
     <!-- Commit 1 – switch to color picker -->
     <input id="color-input" type="color" value="#dddddd" aria-label="Pick a color">
-
     <button id="apply-btn">Apply Color</button>
 
     <!-- Commit 2 – accessibility label tweak -->
@@ -28,8 +25,8 @@
     <!-- Commit 3 – hint paragraph, safe new line -->
     <p class="rand-hint">Tip: click “Random Color”.</p>
     <div id="box"></div>
+    <!-- Commit 3 - Add hint class -->
+    <p class="hint">You can type a named color or #hex.</p>
   </div>
   <script src="script.js"></script>
 </body>
-</html>
-
